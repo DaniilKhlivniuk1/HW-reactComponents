@@ -1,0 +1,11 @@
+.statistics {
+  padding: 40px 0;
+}
+
+
+
+.list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
