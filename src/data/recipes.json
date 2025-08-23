@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Smoked salmon burger",
+    "time": 20,
+    "servings": 6,
+    "calories": 210,
+    "difficulty": 0
+  },
+  {
+    "title": "Tomatoes With Feta",
+    "time": 15,
+    "servings": 3,
+    "calories": 600,
+    "difficulty": 0
+  },
+  {
+    "title": "Spicy potato salad",
+    "time": 30,
+    "servings": 2,
+    "calories": 320,
+    "difficulty": 1
+  },
+  {
+    "title": "Chicken Biryani",
+    "time": 40,
+    "servings": 4,
+    "calories": 700,
+    "difficulty": 3
+  }
+]
