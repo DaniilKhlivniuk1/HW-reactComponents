@@ -6,7 +6,7 @@ export const ListItem = styled.li`
   align-items: center;
   background: #fafafa;
   border: 3px solid #eee;
-  border-left: 6px solid #c62828;
+  border-left: 6px solid #000000ff;
   padding: 12px 16px;
   margin-bottom: 8px;
   border-radius: 6px;
@@ -24,8 +24,8 @@ export const Text = styled.p`
 
 export const DeleteButton = styled.button`
   background: transparent;
-  color: #c62828;
-  border: 2px solid #c62828;
+  color: #000000ff;
+  border: 2px solid #000000ff;
   border-radius: 50%;
   padding: 6px 8px;
   font-size: 16px;
@@ -34,7 +34,7 @@ export const DeleteButton = styled.button`
   transition: 0.2s;
 
   &:hover {
-    background: #c62828;
+    background: #000000ff;
     color: #fff;
   }
 `;

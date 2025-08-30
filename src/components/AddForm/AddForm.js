@@ -16,19 +16,19 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 8px 12px;
-  border: 2px solid #c62828;
+  border: 2px solid #000000ff;
   border-radius: 6px;
   outline: none;
   font-size: 16px;
   margin-left: 8px;
 
   &:focus {
-    border-color: #b71c1c;
+    border-color: #000000ff;
   }
 `;
 
 export const Button = styled.button`
-  background: #c62828;
+  background: #000000ff;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -39,6 +39,6 @@ export const Button = styled.button`
   transition: 0.2s;
 
   &:hover {
-    background: #b71c1c;
+    background: #c11ca8ff;
   }
 `;

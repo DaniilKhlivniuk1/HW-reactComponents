@@ -11,6 +11,12 @@ export const Main = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+export const Label = styled.label`
+  display: block;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #000; /* теперь чёрный */
+`;
 
 export const Title = styled.h1`
   font-size: 42px;
