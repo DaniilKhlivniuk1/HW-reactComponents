@@ -1,58 +1,69 @@
 import "./App.css";
+import { Section } from "./components/Section/Section.jsx";
 import { Component } from "react";
-import tasks from "./data/tasks.json";
-import { TaskList } from "./components/TaskList/TaskList.jsx";
-import { AddForm } from "./components/AddForm/AddForm.jsx";
-import data from "./data/tasks.json";
-import { nanoid } from "nanoid";
-import { Title, Main } from "./App.js";
-import { GlobalStyle } from "./GlobalStyles.js";
+import { GlobalStyle } from "./GlobalStyles";
+import { Main } from "./App.js";
 
 class App extends Component {
   state = {
-    data: tasks,
-    newTask: "",
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
-  addTask = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget.children[1].firstElementChild.value);
-    const text = e.currentTarget.children[1].firstElementChild.value;
-    this.setState((prevState) => {
-      return {
-        data: [
-          ...prevState.data,
-          {
-            id: nanoid(8),
-            text: text,
-          },
-        ],
-      };
-    });
-    e.target.reset();
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad;
   };
 
-  deleteTask = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget);
-    console.log(e.currentTarget.parentElement.id);
-    const id = e.currentTarget.parentElement.id;
-    const task = this.state.data.find((task) => task.id === id);
-    const index = this.state.data.indexOf(task);
-    this.setState((prevState) => {
-      return {
-        data: prevState.data.filter((_, i) => i !== index),
-      };
-    });
+  countPositiveFeedbackPercentage = () => {
+    if (this.countTotalFeedback()) {
+      return Math.round(
+        (this.state.good /
+          (this.state.good + this.state.neutral + this.state.bad)) *
+          100
+      );
+    } else {
+      return 0;
+    }
+  };
+
+  countFeedbackToState = (e) => {
+    if (e.target.id === "good-btn") {
+      this.setState((prevState) => {
+        return {
+          good: prevState.good + 1,
+        };
+      });
+    }
+    if (e.target.id === "neutral-btn") {
+      this.setState((prevState) => {
+        return {
+          neutral: prevState.neutral + 1,
+        };
+      });
+    }
+    if (e.target.id === "bad-btn") {
+      this.setState((prevState) => {
+        return {
+          bad: prevState.bad + 1,
+        };
+      });
+    }
   };
 
   render() {
     return (
-      <Main className="App">
+      <Main>
         <GlobalStyle />
-        <Title>To Do Tasks</Title>
-        <AddForm addTask={this.addTask} />
-        <TaskList tasks={this.state.data} deleteTask={this.deleteTask} />
+        <Section
+          title={"Please leave feedbak"}
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
+          countFeedbackToState={this.countFeedbackToState}
+        />
       </Main>
     );
   }
