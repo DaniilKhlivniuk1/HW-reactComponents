@@ -1,0 +1,38 @@
+@use 'sass:math';
+
+@import "../../App.module.scss";
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: #000;
+  }
+
+  button {
+    background: #dc3545; 
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &:hover {
+      background: #c82333;
+    }
+
+    &:active {
+      background: #a71d2a;
+    }
+  }
+}

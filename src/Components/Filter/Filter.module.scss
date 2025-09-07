@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+@import "../../App.module.scss";
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  background: #fff;
+
+  p {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    background: #fff;
+    color: #000;
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: #888;
+      font-style: normal;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #000;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use 'sass:math';
+@import "../../App.module.scss";
+
+.addContactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 350px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  label {
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  input {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #000;
+
+    &:focus {
+      outline: none;
+      border-color: #666;
+    }
+  }
+
+  button {
+    background: #007bff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: #0056b3;
+    }
+
+    &:active {
+      background: #004080;
+    }
+  }
+}
